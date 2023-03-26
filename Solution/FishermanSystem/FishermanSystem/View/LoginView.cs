@@ -16,5 +16,12 @@ namespace FishermanSystem.View
         {
             InitializeComponent();
         }
+
+        private void registerbtn_Click(object sender, EventArgs e)
+        {
+            RegisterView rv = new RegisterView();
+            Hide();
+            rv.Show();
+        }
     }
 }
