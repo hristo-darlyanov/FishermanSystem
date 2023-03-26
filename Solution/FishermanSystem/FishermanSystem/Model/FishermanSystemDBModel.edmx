@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FishermanSystemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Boat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="register_id" Type="int" Nullable="false" />
+          <Property Name="boat_name" Type="varchar(max)" Nullable="false" />
+          <Property Name="expire_date" Type="date" Nullable="false" />
+          <Property Name="engine_fuel_consumption" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTION\FISHERMANSYSTEM\FISHERMANSYSTEM\FISHERMANSYSTEMDB.MDF.dbo.Fishing_Session' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Fishing_Session">
+          <Key>
+            <PropertyRef Name="register_id" />
+          </Key>
+          <Property Name="register_id" Type="int" Nullable="false" />
+          <Property Name="date_of_fishing_session" Type="date" />
+          <Property Name="amount_fished_kg" Type="int" />
+          <Property Name="duration_of_fishing_session_min" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="register_id" />
+          </Key>
+          <Property Name="register_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar(max)" Nullable="false" />
+          <Property Name="password" Type="varchar(max)" Nullable="false" />
+          <Property Name="hobby" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Boat__register_i__4AB81AF0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Boat" Type="Self.Boat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="register_id" />
+            </Principal>
+            <Dependent Role="Boat">
+              <PropertyRef Name="register_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Fishing_S__regis__5BE2A6F2">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Fishing_Session" Type="Self.Fishing_Session" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="register_id" />
+            </Principal>
+            <Dependent Role="Fishing_Session">
+              <PropertyRef Name="register_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FishermanSystemDBModelStoreContainer">
+          <EntitySet Name="Boat" EntityType="Self.Boat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fishing_Session" EntityType="Self.Fishing_Session" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Fishing_Session].[register_id] AS [register_id], 
+    [Fishing_Session].[date_of_fishing_session] AS [date_of_fishing_session], 
+    [Fishing_Session].[amount_fished_kg] AS [amount_fished_kg], 
+    [Fishing_Session].[duration_of_fishing_session_min] AS [duration_of_fishing_session_min]
+    FROM [dbo].[Fishing_Session] AS [Fishing_Session]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Boat__register_i__4AB81AF0" Association="Self.FK__Boat__register_i__4AB81AF0">
+            <End Role="User" EntitySet="User" />
+            <End Role="Boat" EntitySet="Boat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Fishing_S__regis__5BE2A6F2" Association="Self.FK__Fishing_S__regis__5BE2A6F2">
+            <End Role="User" EntitySet="User" />
+            <End Role="Fishing_Session" EntitySet="Fishing_Session" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FishermanSystemDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="register_id" />
+          </Key>
+          <Property Name="register_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hobby" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Boat" Relationship="Self.FK__Boat__register_i__4AB81AF0" FromRole="User" ToRole="Boat" />
+          <NavigationProperty Name="Fishing_Session" Relationship="Self.FK__Fishing_S__regis__5BE2A6F2" FromRole="User" ToRole="Fishing_Session" />
+        </EntityType>
+        <EntityType Name="Boat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="register_id" Type="Int32" Nullable="false" />
+          <Property Name="boat_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="expire_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="engine_fuel_consumption" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Boat__register_i__4AB81AF0" FromRole="Boat" ToRole="User" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Fishing_Session">
+          <Key>
+            <PropertyRef Name="register_id" />
+          </Key>
+          <Property Name="register_id" Type="Int32" Nullable="false" />
+          <Property Name="date_of_fishing_session" Type="DateTime" Precision="0" />
+          <Property Name="amount_fished_kg" Type="Int32" />
+          <Property Name="duration_of_fishing_session_min" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Fishing_S__regis__5BE2A6F2" FromRole="Fishing_Session" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__Boat__register_i__4AB81AF0">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Boat" Type="Self.Boat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="register_id" />
+            </Principal>
+            <Dependent Role="Boat">
+              <PropertyRef Name="register_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Fishing_S__regis__5BE2A6F2">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Fishing_Session" Type="Self.Fishing_Session" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="register_id" />
+            </Principal>
+            <Dependent Role="Fishing_Session">
+              <PropertyRef Name="register_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FishermanSystemDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="Boat" EntityType="Self.Boat" />
+          <EntitySet Name="Fishing_Session" EntityType="Self.Fishing_Session" />
+          <AssociationSet Name="FK__Boat__register_i__4AB81AF0" Association="Self.FK__Boat__register_i__4AB81AF0">
+            <End Role="User" EntitySet="User" />
+            <End Role="Boat" EntitySet="Boat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Fishing_S__regis__5BE2A6F2" Association="Self.FK__Fishing_S__regis__5BE2A6F2">
+            <End Role="User" EntitySet="User" />
+            <End Role="Fishing_Session" EntitySet="Fishing_Session" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FishermanSystemDBModelStoreContainer" CdmEntityContainer="FishermanSystemDBEntities">
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="FishermanSystemDBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="register_id" ColumnName="register_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="hobby" ColumnName="hobby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Boat">
+            <EntityTypeMapping TypeName="FishermanSystemDBModel.Boat">
+              <MappingFragment StoreEntitySet="Boat">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="register_id" ColumnName="register_id" />
+                <ScalarProperty Name="boat_name" ColumnName="boat_name" />
+                <ScalarProperty Name="expire_date" ColumnName="expire_date" />
+                <ScalarProperty Name="engine_fuel_consumption" ColumnName="engine_fuel_consumption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fishing_Session">
+            <EntityTypeMapping TypeName="FishermanSystemDBModel.Fishing_Session">
+              <MappingFragment StoreEntitySet="Fishing_Session">
+                <ScalarProperty Name="register_id" ColumnName="register_id" />
+                <ScalarProperty Name="date_of_fishing_session" ColumnName="date_of_fishing_session" />
+                <ScalarProperty Name="amount_fished_kg" ColumnName="amount_fished_kg" />
+                <ScalarProperty Name="duration_of_fishing_session_min" ColumnName="duration_of_fishing_session_min" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

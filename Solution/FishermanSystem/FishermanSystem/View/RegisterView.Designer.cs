@@ -33,11 +33,12 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtBoatName = new System.Windows.Forms.TextBox();
-            this.txtExpireDate = new System.Windows.Forms.TextBox();
             this.txtFuelConsumption = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBoxHobby = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dtpBoatExpiryDate = new System.Windows.Forms.DateTimePicker();
+            this.lblBoatExpiryDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -59,6 +60,7 @@
             this.btnRegister.TabIndex = 1;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtUsername
             // 
@@ -86,15 +88,6 @@
             this.txtBoatName.Size = new System.Drawing.Size(452, 38);
             this.txtBoatName.TabIndex = 10;
             this.txtBoatName.Text = "Boat name";
-            // 
-            // txtExpireDate
-            // 
-            this.txtExpireDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExpireDate.Location = new System.Drawing.Point(12, 235);
-            this.txtExpireDate.Name = "txtExpireDate";
-            this.txtExpireDate.Size = new System.Drawing.Size(452, 38);
-            this.txtExpireDate.TabIndex = 11;
-            this.txtExpireDate.Text = "Boat expiry date";
             // 
             // txtFuelConsumption
             // 
@@ -137,16 +130,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dtpBoatExpiryDate
+            // 
+            this.dtpBoatExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBoatExpiryDate.Location = new System.Drawing.Point(159, 235);
+            this.dtpBoatExpiryDate.Name = "dtpBoatExpiryDate";
+            this.dtpBoatExpiryDate.Size = new System.Drawing.Size(305, 38);
+            this.dtpBoatExpiryDate.TabIndex = 16;
+            // 
+            // lblBoatExpiryDate
+            // 
+            this.lblBoatExpiryDate.AutoSize = true;
+            this.lblBoatExpiryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBoatExpiryDate.Location = new System.Drawing.Point(4, 238);
+            this.lblBoatExpiryDate.Name = "lblBoatExpiryDate";
+            this.lblBoatExpiryDate.Size = new System.Drawing.Size(154, 31);
+            this.lblBoatExpiryDate.TabIndex = 17;
+            this.lblBoatExpiryDate.Text = "Expiry Date";
+            // 
             // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 450);
+            this.Controls.Add(this.lblBoatExpiryDate);
+            this.Controls.Add(this.dtpBoatExpiryDate);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBoxHobby);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFuelConsumption);
-            this.Controls.Add(this.txtExpireDate);
             this.Controls.Add(this.txtBoatName);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -166,10 +178,11 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtBoatName;
-        private System.Windows.Forms.TextBox txtExpireDate;
         private System.Windows.Forms.TextBox txtFuelConsumption;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxHobby;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpBoatExpiryDate;
+        private System.Windows.Forms.Label lblBoatExpiryDate;
     }
 }
