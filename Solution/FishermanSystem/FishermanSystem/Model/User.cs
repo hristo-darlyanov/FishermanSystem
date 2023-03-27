@@ -20,10 +20,12 @@ namespace FishermanSystem.Model
             this.Boat = new HashSet<Boat>();
         }
 
-        public User(string username, string password, int hobby)
+        public User(string username, string password, string first_name, string last_name, int hobby)
         {
             this.username = username;
             this.password = password;
+            this.first_name = first_name;
+            this.last_name = last_name;
             this.hobby = hobby;
         }
 
@@ -31,6 +33,8 @@ namespace FishermanSystem.Model
         public string username { get; set; }
         public string password { get; set; }
         public int hobby { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Boat> Boat { get; set; }

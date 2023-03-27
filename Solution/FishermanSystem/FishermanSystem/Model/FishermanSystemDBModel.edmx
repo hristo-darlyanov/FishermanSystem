@@ -34,6 +34,8 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
           <Property Name="username" Type="varchar(max)" Nullable="false" />
           <Property Name="password" Type="varchar(max)" Nullable="false" />
           <Property Name="hobby" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar(max)" Nullable="false" />
+          <Property Name="last_name" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <Association Name="FK__Boat__register_i__4AB81AF0">
           <End Role="User" Type="Self.User" Multiplicity="1" />
@@ -93,6 +95,8 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
           <Property Name="hobby" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Boat" Relationship="Self.FK__Boat__register_i__4AB81AF0" FromRole="User" ToRole="Boat" />
           <NavigationProperty Name="Fishing_Session" Relationship="Self.FK__Fishing_S__regis__5BE2A6F2" FromRole="User" ToRole="Fishing_Session" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Boat">
           <Key>
@@ -161,6 +165,8 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="FishermanSystemDBModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
                 <ScalarProperty Name="register_id" ColumnName="register_id" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
