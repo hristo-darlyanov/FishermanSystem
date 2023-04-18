@@ -33,7 +33,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.checkBoxHobby = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBackToLoginView = new System.Windows.Forms.Button();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -91,16 +91,16 @@
             this.checkBoxHobby.Text = "Are you fishing for a hobby";
             this.checkBoxHobby.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBackToLoginView
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(345, 444);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 42);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "BACK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBackToLoginView.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToLoginView.Location = new System.Drawing.Point(345, 444);
+            this.btnBackToLoginView.Name = "btnBackToLoginView";
+            this.btnBackToLoginView.Size = new System.Drawing.Size(119, 42);
+            this.btnBackToLoginView.TabIndex = 15;
+            this.btnBackToLoginView.Text = "BACK";
+            this.btnBackToLoginView.UseVisualStyleBackColor = true;
+            this.btnBackToLoginView.Click += new System.EventHandler(this.btnBackToLoginView_Click);
             // 
             // txtFirstName
             // 
@@ -159,7 +159,7 @@
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBackToLoginView);
             this.Controls.Add(this.checkBoxHobby);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -179,7 +179,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox checkBoxHobby;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBackToLoginView;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtConfirmPassword;

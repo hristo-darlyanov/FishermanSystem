@@ -23,13 +23,6 @@ namespace FishermanSystem.View
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoginView lv = new LoginView();
-            Hide();
-            lv.Show();
-        }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             var username = txtUsername.Text;
@@ -113,6 +106,13 @@ namespace FishermanSystem.View
                 return false;
             }
             return true;
+        }
+
+        private void btnBackToLoginView_Click(object sender, EventArgs e)
+        {
+            LoginView lv = new LoginView();
+            Hide();
+            lv.Show();
         }
     }
 }

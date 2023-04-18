@@ -10,7 +10,7 @@ namespace FishermanSystem.Controller
 {
     internal class DatabaseController
     {
-        public void CreateRegister(User user)
+        public void CreateUser(User user)
         {
             using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
             {

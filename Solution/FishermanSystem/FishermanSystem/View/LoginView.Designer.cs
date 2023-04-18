@@ -104,7 +104,7 @@
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.registerbtn_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // LoginView
             // 
