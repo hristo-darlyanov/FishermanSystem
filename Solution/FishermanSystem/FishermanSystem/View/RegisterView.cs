@@ -40,7 +40,7 @@ namespace FishermanSystem.View
 
             if (ValidUser(username, password, confirmPassword, firstName, lastName))
             {
-                dbController.CreateRegister(user);
+                dbController.CreateUser(user);
                 var mv = new MainView();
                 Hide();
                 mv.Show();
