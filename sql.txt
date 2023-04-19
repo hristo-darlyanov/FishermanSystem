@@ -1,0 +1,18 @@
+﻿SELECT *
+FROM boats
+WHERE expire_date < 30
+
+SELECT SUM(Fishing_Info.amount_fished_kg)
+FROM User
+INNER JOIN Fishing_Info
+ON User.register_id = Fishing_Info.register_id
+WHERE(Fishing_Info.duration_on_fishing < 13)
+
+SELECT MAX(Fishing_Info.duration_on_fishing), MIN(Fishing_Info.duration_on_fishing), AVG(Fishing_Info.duration_on_fishing),MAX(Fishing_Info.amount_fished_kg), MIN(Fishing_Info.amount_fished_kg), AVG(Fishing_Info.amount_fished_kg), MAX(Fishing_Info.Id)
+WHERE Fishing_Info.duration_on_fishing < 13
+
+SELECT Fishing_Info.amount_fished_kg / boats.engine_fuel_consuption
+FROM Fishing_Info
+INNER JOIN boats
+ON Fishing_Info.register_id = boats.register_id
+WHERE boats.expire_date > 1
