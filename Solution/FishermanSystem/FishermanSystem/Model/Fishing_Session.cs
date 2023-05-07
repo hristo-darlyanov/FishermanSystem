@@ -14,6 +14,7 @@ namespace FishermanSystem.Model
     
     public partial class Fishing_Session
     {
+        public int id { get; set; }
         public int register_id { get; set; }
         public Nullable<System.DateTime> date_of_fishing_session { get; set; }
         public Nullable<int> amount_fished_kg { get; set; }

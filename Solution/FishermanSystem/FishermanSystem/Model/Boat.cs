@@ -14,13 +14,6 @@ namespace FishermanSystem.Model
     
     public partial class Boat
     {
-        public Boat(string boat_name, DateTime expire_date, int engine_fuel_consumption)
-        {
-            this.boat_name = boat_name;
-            this.expire_date = expire_date;
-            this.engine_fuel_consumption = engine_fuel_consumption;
-        }
-
         public int register_id { get; set; }
         public string boat_name { get; set; }
         public System.DateTime expire_date { get; set; }

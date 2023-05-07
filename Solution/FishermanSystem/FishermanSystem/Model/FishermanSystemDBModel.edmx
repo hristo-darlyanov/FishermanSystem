@@ -15,16 +15,15 @@
           <Property Name="engine_fuel_consumption" Type="int" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTION\FISHERMANSYSTEM\FISHERMANSYSTEM\FISHERMANSYSTEMDB.MDF.dbo.Fishing_Session' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Fishing_Session">
           <Key>
-            <PropertyRef Name="register_id" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="register_id" Type="int" Nullable="false" />
           <Property Name="date_of_fishing_session" Type="date" />
           <Property Name="amount_fished_kg" Type="int" />
           <Property Name="duration_of_fishing_session_min" Type="int" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -51,7 +50,7 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
         </Association>
         <Association Name="FK__Fishing_S__regis__5BE2A6F2">
           <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Fishing_Session" Type="Self.Fishing_Session" Multiplicity="0..1" />
+          <End Role="Fishing_Session" Type="Self.Fishing_Session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="register_id" />
@@ -63,15 +62,8 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
         </Association>
         <EntityContainer Name="FishermanSystemDBModelStoreContainer">
           <EntitySet Name="Boat" EntityType="Self.Boat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fishing_Session" EntityType="Self.Fishing_Session" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Fishing_Session" EntityType="Self.Fishing_Session" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Fishing_Session].[register_id] AS [register_id], 
-    [Fishing_Session].[date_of_fishing_session] AS [date_of_fishing_session], 
-    [Fishing_Session].[amount_fished_kg] AS [amount_fished_kg], 
-    [Fishing_Session].[duration_of_fishing_session_min] AS [duration_of_fishing_session_min]
-    FROM [dbo].[Fishing_Session] AS [Fishing_Session]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__Boat__register_i__4AB81AF0" Association="Self.FK__Boat__register_i__4AB81AF0">
             <End Role="User" EntitySet="User" />
             <End Role="Boat" EntitySet="Boat" />
@@ -111,8 +103,9 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
         </EntityType>
         <EntityType Name="Fishing_Session">
           <Key>
-            <PropertyRef Name="register_id" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="register_id" Type="Int32" Nullable="false" />
           <Property Name="date_of_fishing_session" Type="DateTime" Precision="0" />
           <Property Name="amount_fished_kg" Type="Int32" />
@@ -133,7 +126,7 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
         </Association>
         <Association Name="FK__Fishing_S__regis__5BE2A6F2">
           <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Fishing_Session" Type="Self.Fishing_Session" Multiplicity="0..1" />
+          <End Role="Fishing_Session" Type="Self.Fishing_Session" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="register_id" />
@@ -188,6 +181,7 @@ warning 6002: The table/view 'C:\USERS\MEMED\DESKTOP\GAME\FISHERMANSYSTEM\SOLUTI
           <EntitySetMapping Name="Fishing_Session">
             <EntityTypeMapping TypeName="FishermanSystemDBModel.Fishing_Session">
               <MappingFragment StoreEntitySet="Fishing_Session">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="register_id" ColumnName="register_id" />
                 <ScalarProperty Name="date_of_fishing_session" ColumnName="date_of_fishing_session" />
                 <ScalarProperty Name="amount_fished_kg" ColumnName="amount_fished_kg" />
