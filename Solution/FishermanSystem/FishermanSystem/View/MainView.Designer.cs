@@ -60,6 +60,7 @@
             this.btnShowExpiringLicenses.TabIndex = 1;
             this.btnShowExpiringLicenses.Text = "Show Info";
             this.btnShowExpiringLicenses.UseVisualStyleBackColor = true;
+            this.btnShowExpiringLicenses.Click += new System.EventHandler(this.btnShowExpiringLicenses_Click);
             // 
             // btnShowCarbonPrint
             // 
@@ -70,6 +71,7 @@
             this.btnShowCarbonPrint.TabIndex = 2;
             this.btnShowCarbonPrint.Text = "Show Info";
             this.btnShowCarbonPrint.UseVisualStyleBackColor = true;
+            this.btnShowCarbonPrint.Click += new System.EventHandler(this.btnShowCarbonPrint_Click);
             // 
             // btnShowBiggestCatchFromHobbyFishers
             // 
@@ -80,6 +82,7 @@
             this.btnShowBiggestCatchFromHobbyFishers.TabIndex = 4;
             this.btnShowBiggestCatchFromHobbyFishers.Text = "Show Info";
             this.btnShowBiggestCatchFromHobbyFishers.UseVisualStyleBackColor = true;
+            this.btnShowBiggestCatchFromHobbyFishers.Click += new System.EventHandler(this.btnShowBiggestCatchFromHobbyFishers_Click);
             // 
             // label1
             // 
@@ -100,6 +103,7 @@
             this.btnShowFishingInfo.TabIndex = 3;
             this.btnShowFishingInfo.Text = "Show Info";
             this.btnShowFishingInfo.UseVisualStyleBackColor = true;
+            this.btnShowFishingInfo.Click += new System.EventHandler(this.btnShowFishingInfo_Click);
             // 
             // label2
             // 
