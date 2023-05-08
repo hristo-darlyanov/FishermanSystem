@@ -20,17 +20,18 @@ namespace FishermanSystem.View
             InitializeComponent();
         }
 
-        private void btnShowBiggestCatchFromHobbyFishers_Click(object sender, EventArgs e)
+        private void btnShowExpiringLicenses_Click(object sender, EventArgs e)
         {
-            var ds = controller.CustomQuery("select * from [User]"); // Change this to the corresponding query in the excersise
+            var ds = controller.CustomQuery("select boat_name, expire_date from [Boat] where expire_date BETWEEN GETDATE() AND DATEADD(month, 1, GETDATE())");
             dgvQueryData.ReadOnly = true;
             dgvQueryData.DataSource = ds.Tables[0];
         }
 
-        private void btnShowExpiringLicenses_Click(object sender, EventArgs e)
+        private void btnShowBiggestCatchFromHobbyFishers_Click(object sender, EventArgs e)
         {
             // To do
         }
+
 
         private void btnShowFishingInfo_Click(object sender, EventArgs e)
         {

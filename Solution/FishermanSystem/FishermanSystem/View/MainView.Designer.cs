@@ -54,7 +54,7 @@
             // btnShowExpiringLicenses
             // 
             this.btnShowExpiringLicenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowExpiringLicenses.Location = new System.Drawing.Point(12, 169);
+            this.btnShowExpiringLicenses.Location = new System.Drawing.Point(12, 46);
             this.btnShowExpiringLicenses.Name = "btnShowExpiringLicenses";
             this.btnShowExpiringLicenses.Size = new System.Drawing.Size(172, 53);
             this.btnShowExpiringLicenses.TabIndex = 1;
@@ -76,7 +76,7 @@
             // btnShowBiggestCatchFromHobbyFishers
             // 
             this.btnShowBiggestCatchFromHobbyFishers.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowBiggestCatchFromHobbyFishers.Location = new System.Drawing.Point(12, 56);
+            this.btnShowBiggestCatchFromHobbyFishers.Location = new System.Drawing.Point(12, 163);
             this.btnShowBiggestCatchFromHobbyFishers.Name = "btnShowBiggestCatchFromHobbyFishers";
             this.btnShowBiggestCatchFromHobbyFishers.Size = new System.Drawing.Size(172, 53);
             this.btnShowBiggestCatchFromHobbyFishers.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 28);
+            this.label1.Location = new System.Drawing.Point(7, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 25);
             this.label1.TabIndex = 5;
@@ -109,7 +109,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 141);
+            this.label2.Location = new System.Drawing.Point(7, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(211, 25);
             this.label2.TabIndex = 6;
