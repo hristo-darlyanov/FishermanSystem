@@ -36,12 +36,18 @@ namespace FishermanSystem.View
 
         private void btnShowFishingInfo_Click(object sender, EventArgs e)
         {
-            // To do
+            string query = "select COUNT(date_of_fishing_session) as countfishhingsession, date_of_fishing_session as dataToFishing, MIN(duration_of_fishing_session_min) as minimal, MAX(duration_of_fishing_session_min) as maximal, AVG(duration_of_fishing_session_min) as avgasd, SUM(duration_of_fishing_session_min) as summm from Fishing_Session group by date_of_fishing_session";
+            var ds = controller.CustomQuery(query);
+            dgvQueryData.ReadOnly = true;
+            dgvQueryData.DataSource = ds.Tables[0];
         }
 
         private void btnShowCarbonPrint_Click(object sender, EventArgs e)
         {
-            // To do
+            string query = "SELECT boat_name, Fishing_Session.amount_fished_kg / Boat.engine_fuel_consumption as carbonFootprint FROM Fishing_Session INNER JOIN Boat ON Fishing_Session.register_id = Boat.register_id where Boat.expire_date > GETDATE()";
+            var ds = controller.CustomQuery(query);
+            dgvQueryData.ReadOnly = true;
+            dgvQueryData.DataSource = ds.Tables[0];
         }
     }
 }
