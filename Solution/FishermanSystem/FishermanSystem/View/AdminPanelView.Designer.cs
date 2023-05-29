@@ -56,6 +56,9 @@
             this.boatTableAdapter = new FishermanSystem.FishermanSystemDBDataSetTableAdapters.BoatTableAdapter();
             this.fishing_SessionTableAdapter = new FishermanSystem.FishermanSystemDBDataSetTableAdapters.Fishing_SessionTableAdapter();
             this.lblId = new System.Windows.Forms.Label();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnAddFishingInfo = new System.Windows.Forms.Button();
+            this.btnAddBoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fishermanSystemDBDataSetBindingSource)).BeginInit();
@@ -290,11 +293,45 @@
             this.lblId.TabIndex = 5;
             this.lblId.Text = "Selected user ID:";
             // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.Location = new System.Drawing.Point(30, 362);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(394, 48);
+            this.btnAddUser.TabIndex = 6;
+            this.btnAddUser.Text = "Add User";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // btnAddFishingInfo
+            // 
+            this.btnAddFishingInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFishingInfo.Location = new System.Drawing.Point(1002, 362);
+            this.btnAddFishingInfo.Name = "btnAddFishingInfo";
+            this.btnAddFishingInfo.Size = new System.Drawing.Size(394, 48);
+            this.btnAddFishingInfo.TabIndex = 7;
+            this.btnAddFishingInfo.Text = "Add Fishing Info";
+            this.btnAddFishingInfo.UseVisualStyleBackColor = true;
+            // 
+            // btnAddBoat
+            // 
+            this.btnAddBoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBoat.Location = new System.Drawing.Point(515, 362);
+            this.btnAddBoat.Name = "btnAddBoat";
+            this.btnAddBoat.Size = new System.Drawing.Size(394, 48);
+            this.btnAddBoat.TabIndex = 8;
+            this.btnAddBoat.Text = "Add Boat";
+            this.btnAddBoat.UseVisualStyleBackColor = true;
+            // 
             // AdminPanelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1436, 638);
+            this.Controls.Add(this.btnAddBoat);
+            this.Controls.Add(this.btnAddFishingInfo);
+            this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.dgvFishingInfo);
             this.Controls.Add(this.dgvBoats);
@@ -345,5 +382,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amount_fished_kg;
         private System.Windows.Forms.DataGridViewTextBoxColumn duration_of_fishing_session_min;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Button btnAddFishingInfo;
+        private System.Windows.Forms.Button btnAddBoat;
     }
 }

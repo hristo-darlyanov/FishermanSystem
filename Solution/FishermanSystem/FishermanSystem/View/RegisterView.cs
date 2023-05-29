@@ -17,10 +17,12 @@ namespace FishermanSystem.View
     {
         DatabaseController dbController = new DatabaseController();
         Regex validPassword = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
+        bool enteringTroughAdminPanel = false;
 
-        public RegisterView()
+        public RegisterView(bool enteringTroughAdminPanel)
         {
             InitializeComponent();
+            this.enteringTroughAdminPanel = enteringTroughAdminPanel;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -110,9 +112,18 @@ namespace FishermanSystem.View
 
         private void btnBackToLoginView_Click(object sender, EventArgs e)
         {
-            LoginView lv = new LoginView();
-            Hide();
-            lv.Show();
+            if (enteringTroughAdminPanel)
+            {
+                AdminPanelView adminPanelView = new AdminPanelView();
+                Hide();
+                adminPanelView.Show();
+            }
+            else
+            {
+                LoginView lv = new LoginView();
+                Hide();
+                lv.Show();
+            }
         }
     }
 }

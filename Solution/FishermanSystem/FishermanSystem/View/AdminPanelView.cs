@@ -49,5 +49,12 @@ namespace FishermanSystem.View
             int id = int.Parse(row.Cells[0].Value.ToString());
             lblId.Text = "Selected user ID: " + id.ToString();
         }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            RegisterView register = new RegisterView(true);
+            Hide();
+            register.Show();
+        }
     }
 }

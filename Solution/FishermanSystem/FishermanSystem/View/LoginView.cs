@@ -59,7 +59,7 @@ namespace FishermanSystem.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RegisterView rv = new RegisterView();
+            RegisterView rv = new RegisterView(false);
             Hide();
             rv.Show();
         }
