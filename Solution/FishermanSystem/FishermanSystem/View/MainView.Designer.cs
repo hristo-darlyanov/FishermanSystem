@@ -44,19 +44,22 @@
             // btnAlterUserInfo
             // 
             this.btnAlterUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterUserInfo.Location = new System.Drawing.Point(899, 12);
+            this.btnAlterUserInfo.Location = new System.Drawing.Point(1199, 15);
+            this.btnAlterUserInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAlterUserInfo.Name = "btnAlterUserInfo";
-            this.btnAlterUserInfo.Size = new System.Drawing.Size(196, 33);
+            this.btnAlterUserInfo.Size = new System.Drawing.Size(261, 41);
             this.btnAlterUserInfo.TabIndex = 0;
             this.btnAlterUserInfo.Text = "ALTER USER INFO";
             this.btnAlterUserInfo.UseVisualStyleBackColor = true;
+            this.btnAlterUserInfo.Click += new System.EventHandler(this.btnAlterUserInfo_Click);
             // 
             // btnShowExpiringLicenses
             // 
             this.btnShowExpiringLicenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowExpiringLicenses.Location = new System.Drawing.Point(12, 46);
+            this.btnShowExpiringLicenses.Location = new System.Drawing.Point(16, 57);
+            this.btnShowExpiringLicenses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowExpiringLicenses.Name = "btnShowExpiringLicenses";
-            this.btnShowExpiringLicenses.Size = new System.Drawing.Size(172, 53);
+            this.btnShowExpiringLicenses.Size = new System.Drawing.Size(229, 65);
             this.btnShowExpiringLicenses.TabIndex = 1;
             this.btnShowExpiringLicenses.Text = "Show Info";
             this.btnShowExpiringLicenses.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@
             // btnShowCarbonPrint
             // 
             this.btnShowCarbonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowCarbonPrint.Location = new System.Drawing.Point(12, 406);
+            this.btnShowCarbonPrint.Location = new System.Drawing.Point(16, 500);
+            this.btnShowCarbonPrint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowCarbonPrint.Name = "btnShowCarbonPrint";
-            this.btnShowCarbonPrint.Size = new System.Drawing.Size(172, 53);
+            this.btnShowCarbonPrint.Size = new System.Drawing.Size(229, 65);
             this.btnShowCarbonPrint.TabIndex = 2;
             this.btnShowCarbonPrint.Text = "Show Info";
             this.btnShowCarbonPrint.UseVisualStyleBackColor = true;
@@ -76,9 +80,10 @@
             // btnShowBiggestCatchFromHobbyFishers
             // 
             this.btnShowBiggestCatchFromHobbyFishers.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowBiggestCatchFromHobbyFishers.Location = new System.Drawing.Point(12, 163);
+            this.btnShowBiggestCatchFromHobbyFishers.Location = new System.Drawing.Point(16, 201);
+            this.btnShowBiggestCatchFromHobbyFishers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowBiggestCatchFromHobbyFishers.Name = "btnShowBiggestCatchFromHobbyFishers";
-            this.btnShowBiggestCatchFromHobbyFishers.Size = new System.Drawing.Size(172, 53);
+            this.btnShowBiggestCatchFromHobbyFishers.Size = new System.Drawing.Size(229, 65);
             this.btnShowBiggestCatchFromHobbyFishers.TabIndex = 4;
             this.btnShowBiggestCatchFromHobbyFishers.Text = "Show Info";
             this.btnShowBiggestCatchFromHobbyFishers.UseVisualStyleBackColor = true;
@@ -88,18 +93,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 135);
+            this.label1.Location = new System.Drawing.Point(9, 166);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 25);
+            this.label1.Size = new System.Drawing.Size(449, 29);
             this.label1.TabIndex = 5;
             this.label1.Text = "Show biggest catch from hobby fishers";
             // 
             // btnShowFishingInfo
             // 
             this.btnShowFishingInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowFishingInfo.Location = new System.Drawing.Point(12, 287);
+            this.btnShowFishingInfo.Location = new System.Drawing.Point(16, 353);
+            this.btnShowFishingInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowFishingInfo.Name = "btnShowFishingInfo";
-            this.btnShowFishingInfo.Size = new System.Drawing.Size(172, 53);
+            this.btnShowFishingInfo.Size = new System.Drawing.Size(229, 65);
             this.btnShowFishingInfo.TabIndex = 3;
             this.btnShowFishingInfo.Text = "Show Info";
             this.btnShowFishingInfo.UseVisualStyleBackColor = true;
@@ -109,9 +116,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 18);
+            this.label2.Location = new System.Drawing.Point(9, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 25);
+            this.label2.Size = new System.Drawing.Size(271, 29);
             this.label2.TabIndex = 6;
             this.label2.Text = "Show expiring licenses";
             // 
@@ -119,9 +127,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 259);
+            this.label3.Location = new System.Drawing.Point(9, 319);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 25);
+            this.label3.Size = new System.Drawing.Size(205, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Show fishing info";
             // 
@@ -129,25 +138,28 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 378);
+            this.label4.Location = new System.Drawing.Point(9, 465);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 25);
+            this.label4.Size = new System.Drawing.Size(216, 29);
             this.label4.TabIndex = 8;
             this.label4.Text = "Show carbon print";
             // 
             // dgvQueryData
             // 
             this.dgvQueryData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQueryData.Location = new System.Drawing.Point(323, 116);
+            this.dgvQueryData.Location = new System.Drawing.Point(431, 143);
+            this.dgvQueryData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvQueryData.Name = "dgvQueryData";
-            this.dgvQueryData.Size = new System.Drawing.Size(772, 460);
+            this.dgvQueryData.RowHeadersWidth = 51;
+            this.dgvQueryData.Size = new System.Drawing.Size(1029, 566);
             this.dgvQueryData.TabIndex = 9;
             // 
             // MainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 588);
+            this.ClientSize = new System.Drawing.Size(1476, 724);
             this.Controls.Add(this.dgvQueryData);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -158,6 +170,7 @@
             this.Controls.Add(this.btnShowCarbonPrint);
             this.Controls.Add(this.btnShowExpiringLicenses);
             this.Controls.Add(this.btnAlterUserInfo);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainView";
             this.Text = "MainView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryData)).EndInit();
