@@ -18,6 +18,7 @@ namespace FishermanSystem.Model
         public User()
         {
             this.Boat = new HashSet<Boat>();
+            this.Fishing_Session = new HashSet<Fishing_Session>();
         }
 
         public User(string username, string password, string first_name, string last_name, int hobby)
@@ -38,6 +39,7 @@ namespace FishermanSystem.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Boat> Boat { get; set; }
-        public virtual Fishing_Session Fishing_Session { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Fishing_Session> Fishing_Session { get; set; }
     }
 }
