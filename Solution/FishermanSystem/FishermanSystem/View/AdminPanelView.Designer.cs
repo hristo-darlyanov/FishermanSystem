@@ -59,6 +59,7 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnAddFishingInfo = new System.Windows.Forms.Button();
             this.btnAddBoat = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fishermanSystemDBDataSetBindingSource)).BeginInit();
@@ -324,11 +325,22 @@
             this.btnAddBoat.Text = "Add Boat";
             this.btnAddBoat.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(1310, 603);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(114, 23);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // AdminPanelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1436, 638);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddBoat);
             this.Controls.Add(this.btnAddFishingInfo);
             this.Controls.Add(this.btnAddUser);
@@ -385,5 +397,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnAddFishingInfo;
         private System.Windows.Forms.Button btnAddBoat;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

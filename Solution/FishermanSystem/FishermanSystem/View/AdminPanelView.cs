@@ -56,5 +56,10 @@ namespace FishermanSystem.View
             Hide();
             register.Show();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh();
+        }
     }
 }
