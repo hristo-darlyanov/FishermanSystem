@@ -55,7 +55,7 @@
             this.boatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.boatTableAdapter = new FishermanSystem.FishermanSystemDBDataSetTableAdapters.BoatTableAdapter();
             this.fishing_SessionTableAdapter = new FishermanSystem.FishermanSystemDBDataSetTableAdapters.Fishing_SessionTableAdapter();
-            this.lblCurrentlySelectedUser = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fishermanSystemDBDataSetBindingSource)).BeginInit();
@@ -85,6 +85,7 @@
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.Size = new System.Drawing.Size(429, 310);
             this.dgvUsers.TabIndex = 0;
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // registeridDataGridViewTextBoxColumn
             // 
@@ -170,6 +171,7 @@
             this.dgvBoats.RowTemplate.Height = 24;
             this.dgvBoats.Size = new System.Drawing.Size(418, 310);
             this.dgvBoats.TabIndex = 1;
+            this.dgvBoats.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoats_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -225,6 +227,7 @@
             this.dgvFishingInfo.RowTemplate.Height = 24;
             this.dgvFishingInfo.Size = new System.Drawing.Size(448, 310);
             this.dgvFishingInfo.TabIndex = 2;
+            this.dgvFishingInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFishingInfo_CellClick);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -277,22 +280,22 @@
             // 
             this.fishing_SessionTableAdapter.ClearBeforeFill = true;
             // 
-            // lblCurrentlySelectedUser
+            // lblId
             // 
-            this.lblCurrentlySelectedUser.AutoSize = true;
-            this.lblCurrentlySelectedUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentlySelectedUser.Location = new System.Drawing.Point(12, 374);
-            this.lblCurrentlySelectedUser.Name = "lblCurrentlySelectedUser";
-            this.lblCurrentlySelectedUser.Size = new System.Drawing.Size(375, 39);
-            this.lblCurrentlySelectedUser.TabIndex = 3;
-            this.lblCurrentlySelectedUser.Text = "Currently selected user:";
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(12, 413);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(278, 39);
+            this.lblId.TabIndex = 5;
+            this.lblId.Text = "Selected user ID:";
             // 
             // AdminPanelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1436, 638);
-            this.Controls.Add(this.lblCurrentlySelectedUser);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.dgvFishingInfo);
             this.Controls.Add(this.dgvBoats);
             this.Controls.Add(this.dgvUsers);
@@ -341,6 +344,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_fishing_session;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount_fished_kg;
         private System.Windows.Forms.DataGridViewTextBoxColumn duration_of_fishing_session_min;
-        private System.Windows.Forms.Label lblCurrentlySelectedUser;
+        private System.Windows.Forms.Label lblId;
     }
 }

@@ -28,5 +28,26 @@ namespace FishermanSystem.View
         {
             RefreshData();
         }
+
+        private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvUsers.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            lblId.Text = "Selected user ID: " + id.ToString();
+        }
+
+        private void dgvBoats_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvBoats.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            lblId.Text = "Selected user ID: " + id.ToString();
+        }
+
+        private void dgvFishingInfo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvFishingInfo.CurrentRow;
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            lblId.Text = "Selected user ID: " + id.ToString();
+        }
     }
 }
