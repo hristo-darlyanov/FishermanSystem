@@ -12,6 +12,8 @@ namespace FishermanSystem.View
 {
     public partial class AdminPanelView : Form
     {
+        int selectedRegistryId;
+
         public AdminPanelView()
         {
             InitializeComponent();
@@ -32,22 +34,27 @@ namespace FishermanSystem.View
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvUsers.CurrentRow;
-            int id = int.Parse(row.Cells[0].Value.ToString());
-            lblId.Text = "Selected user ID: " + id.ToString();
+            int registerId = int.Parse(row.Cells[0].Value.ToString());
+            lblId.Text = "Selected user ID: " + registerId.ToString();
+            lblRemoveRegistryInfo.Text = "Remove currently selected user and all of its info";
         }
 
         private void dgvBoats_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvBoats.CurrentRow;
-            int id = int.Parse(row.Cells[0].Value.ToString());
-            lblId.Text = "Selected user ID: " + id.ToString();
+            int registerId = int.Parse(row.Cells[0].Value.ToString());
+            int id = int.Parse(row.Cells[1].Value.ToString());
+            lblId.Text = "Selected user ID: " + registerId.ToString();
+            lblRemoveRegistryInfo.Text = "Remove currently selected boat with ID: " + id;
         }
 
         private void dgvFishingInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvFishingInfo.CurrentRow;
-            int id = int.Parse(row.Cells[0].Value.ToString());
-            lblId.Text = "Selected user ID: " + id.ToString();
+            int registerId = int.Parse(row.Cells[0].Value.ToString());
+            int id = int.Parse(row.Cells[1].Value.ToString());
+            lblId.Text = "Selected user ID: " + registerId.ToString();
+            lblRemoveRegistryInfo.Text = "Remove currently selected fishing session with ID: " + id;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -60,6 +67,11 @@ namespace FishermanSystem.View
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void btnRemoveRegistry_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
