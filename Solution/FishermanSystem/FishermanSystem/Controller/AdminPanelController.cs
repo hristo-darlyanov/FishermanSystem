@@ -29,5 +29,25 @@ namespace FishermanSystem.Controller
                 db.SaveChanges();
             }
         }
+
+        public void RemoveBoat(int id)
+        {
+            using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
+            {
+                var boatToDelete = db.Boat.Where(x => x.id == id).FirstOrDefault();
+                db.Boat.Remove(boatToDelete);
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveFishingSession(int id)
+        {
+            using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
+            {
+                var fishingSessionToDelete = db.Fishing_Session.Where(x => x.id == id).FirstOrDefault();
+                db.Fishing_Session.Remove(fishingSessionToDelete);
+                db.SaveChanges();
+            }
+        }
     }
 }

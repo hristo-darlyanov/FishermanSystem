@@ -84,11 +84,19 @@ namespace FishermanSystem.View
 
         private void btnRemoveRegistry_Click(object sender, EventArgs e)
         {
-            if (selectedRegistryId != null)
+            if (selectedRegistry != null && selectedRegistry != string.Empty)
             {
                 if (selectedRegistry == "user")
                 {
                     adminPanelController.RemoveUser(selectedRegistryId);   
+                }
+                if (selectedRegistry == "boat")
+                {
+                    adminPanelController.RemoveBoat(selectedRegistryId);
+                }
+                if (selectedRegistry == "fishingSession")
+                {
+                    adminPanelController.RemoveFishingSession(selectedRegistryId);
                 }
             }
             else
