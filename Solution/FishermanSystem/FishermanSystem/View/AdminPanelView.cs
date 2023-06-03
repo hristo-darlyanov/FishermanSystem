@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FishermanSystem.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,9 @@ namespace FishermanSystem.View
     public partial class AdminPanelView : Form
     {
         int selectedRegistryId;
+        string selectedRegistry;
+        AdminPanelController adminPanelController = new AdminPanelController();
+        DatabaseController databaseController = new DatabaseController();
 
         public AdminPanelView()
         {
@@ -20,10 +24,10 @@ namespace FishermanSystem.View
         }
 
         private void RefreshData()
-        { 
-            this.fishing_SessionTableAdapter.Fill(this.fishermanSystemDBDataSet.Fishing_Session);
-            this.boatTableAdapter.Fill(this.fishermanSystemDBDataSet.Boat);
-            this.userTableAdapter.Fill(this.fishermanSystemDBDataSet.User);
+        {
+            dgvFishingInfo.DataSource = databaseController.ReadAllFishingSessions();
+            dgvUsers.DataSource = databaseController.ReadAllUsers();
+            dgvBoats.DataSource = databaseController.ReadAllBoats();
         }
 
         private void AdminPanelView_Load(object sender, EventArgs e)
@@ -37,6 +41,9 @@ namespace FishermanSystem.View
             int registerId = int.Parse(row.Cells[0].Value.ToString());
             lblId.Text = "Selected user ID: " + registerId.ToString();
             lblRemoveRegistryInfo.Text = "Remove currently selected user and all of its info";
+
+            selectedRegistryId = registerId;
+            selectedRegistry = "user";
         }
 
         private void dgvBoats_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -46,6 +53,9 @@ namespace FishermanSystem.View
             int id = int.Parse(row.Cells[1].Value.ToString());
             lblId.Text = "Selected user ID: " + registerId.ToString();
             lblRemoveRegistryInfo.Text = "Remove currently selected boat with ID: " + id;
+
+            selectedRegistryId = id;
+            selectedRegistry = "boat";
         }
 
         private void dgvFishingInfo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -55,6 +65,9 @@ namespace FishermanSystem.View
             int id = int.Parse(row.Cells[1].Value.ToString());
             lblId.Text = "Selected user ID: " + registerId.ToString();
             lblRemoveRegistryInfo.Text = "Remove currently selected fishing session with ID: " + id;
+
+            selectedRegistryId = id;
+            selectedRegistry = "fishingSession";
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -66,12 +79,22 @@ namespace FishermanSystem.View
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Refresh();
+            RefreshData();
         }
 
         private void btnRemoveRegistry_Click(object sender, EventArgs e)
         {
-            
+            if (selectedRegistryId != null)
+            {
+                if (selectedRegistry == "user")
+                {
+                    adminPanelController.RemoveUser(selectedRegistryId);   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select a registry to remove");
+            }
         }
     }
 }

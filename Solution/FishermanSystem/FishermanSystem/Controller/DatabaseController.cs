@@ -34,6 +34,22 @@ namespace FishermanSystem.Controller
             }
         }
 
+        public List<Boat> ReadAllBoats()
+        {
+            using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
+            {
+                return db.Boat.ToList();
+            }
+        }
+
+        public List<Fishing_Session> ReadAllFishingSessions()
+        {
+            using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
+            {
+                return db.Fishing_Session.ToList();
+            }
+        }
+
         public DataSet CustomQuery(string command)
         {
             if (connectionString.ToLower().StartsWith("metadata="))
