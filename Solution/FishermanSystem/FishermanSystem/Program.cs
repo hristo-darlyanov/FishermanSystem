@@ -17,7 +17,7 @@ namespace FishermanSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminPanelView());
+            Application.Run(new LoginView());
         }
     }
 }
