@@ -17,23 +17,6 @@ namespace FishermanSystem.Controller
     {
         static string connectionString = ConfigurationManager.ConnectionStrings["FishermanSystemDBEntities"].ConnectionString;
 
-        public void CreateUser(User user)
-        {
-            using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
-            {
-                db.User.Add(user);
-                db.SaveChanges();
-            }
-        }
-
-        public List<User> ReadAllUsers()
-        {
-            using (FishermanSystemDBEntities db = new FishermanSystemDBEntities())
-            {
-                return db.User.ToList();
-            }
-        }
-
         public DataSet CustomQuery(string command)
         {
             if (connectionString.ToLower().StartsWith("metadata="))

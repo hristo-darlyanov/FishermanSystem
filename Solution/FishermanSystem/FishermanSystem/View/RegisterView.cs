@@ -15,12 +15,14 @@ namespace FishermanSystem.View
 {
     public partial class RegisterView : Form
     {
-        DatabaseController dbController = new DatabaseController();
+        UserController userController = new UserController();
         Regex validPassword = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
+        bool enteringTroughAdminPanel = false;
 
-        public RegisterView()
+        public RegisterView(bool enteringTroughAdminPanel)
         {
             InitializeComponent();
+            this.enteringTroughAdminPanel = enteringTroughAdminPanel;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace FishermanSystem.View
 
             if (ValidUser(username, password, confirmPassword, firstName, lastName))
             {
-                dbController.CreateUser(user);
+                userController.CreateUser(user);
                 var mv = new MainView();
                 Hide();
                 mv.Show();
@@ -51,7 +53,7 @@ namespace FishermanSystem.View
         {
             if (!string.IsNullOrEmpty(username))
             {
-                var users = dbController.ReadAllUsers();
+                var users = userController.ReadAllUsers();
                 var usernameExists = false;
                 foreach (var user in users)
                 {
@@ -110,9 +112,18 @@ namespace FishermanSystem.View
 
         private void btnBackToLoginView_Click(object sender, EventArgs e)
         {
-            LoginView lv = new LoginView();
-            Hide();
-            lv.Show();
+            if (enteringTroughAdminPanel)
+            {
+                AdminPanelView adminPanelView = new AdminPanelView();
+                Hide();
+                adminPanelView.Show();
+            }
+            else
+            {
+                LoginView lv = new LoginView();
+                Hide();
+                lv.Show();
+            }
         }
     }
 }

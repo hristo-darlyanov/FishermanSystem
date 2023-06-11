@@ -49,5 +49,12 @@ namespace FishermanSystem.View
             dgvQueryData.ReadOnly = true;
             dgvQueryData.DataSource = ds.Tables[0];
         }
+
+        private void btnAlterUserInfo_Click(object sender, EventArgs e)
+        {
+            AdminPanelView adminPanelView = new AdminPanelView();
+            Hide();
+            adminPanelView.Show();
+        }
     }
 }
