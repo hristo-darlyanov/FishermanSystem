@@ -13,7 +13,7 @@ namespace FishermanSystem.View
 {
     public partial class LoginView : Form
     {
-        DatabaseController dbController = new DatabaseController();
+        UserController userController = new UserController();
 
         public LoginView()
         {
@@ -24,7 +24,7 @@ namespace FishermanSystem.View
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
-            var users = dbController.ReadAllUsers();
+            var users = userController.ReadAllUsers();
             bool correctUsername = false;
             bool correctPassword = false;
             foreach (var item in users)

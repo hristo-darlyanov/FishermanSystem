@@ -71,7 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AdminPanelController.cs" />
+    <Compile Include="Controller\BoatController.cs" />
+    <Compile Include="Controller\FishingSessionController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="FishermanSystemDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -41,8 +41,18 @@
             this.fishermanSystemDBDataSet = new FishermanSystem.FishermanSystemDBDataSet();
             this.userTableAdapter = new FishermanSystem.FishermanSystemDBDataSetTableAdapters.UserTableAdapter();
             this.dgvBoats = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boat_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expire_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.engine_fuel_consumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boatBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dgvFishingInfo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_of_fishing_session = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount_fished_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration_of_fishing_session_min = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fishingSessionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.boatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.boatTableAdapter = new FishermanSystem.FishermanSystemDBDataSetTableAdapters.BoatTableAdapter();
@@ -54,16 +64,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lblRemoveRegistryInfo = new System.Windows.Forms.Label();
             this.btnRemoveRegistry = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_of_fishing_session = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount_fished_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration_of_fishing_session_min = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boat_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expire_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.engine_fuel_consumption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBackToMainView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fishermanSystemDBDataSetBindingSource)).BeginInit();
@@ -182,6 +183,48 @@
             this.dgvBoats.TabIndex = 1;
             this.dgvBoats.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoats_CellClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "register_id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "register_id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn2.HeaderText = "id";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // boat_name
+            // 
+            this.boat_name.DataPropertyName = "boat_name";
+            this.boat_name.HeaderText = "boat_name";
+            this.boat_name.MinimumWidth = 6;
+            this.boat_name.Name = "boat_name";
+            this.boat_name.Width = 125;
+            // 
+            // expire_date
+            // 
+            this.expire_date.DataPropertyName = "expire_date";
+            this.expire_date.HeaderText = "expire_date";
+            this.expire_date.MinimumWidth = 6;
+            this.expire_date.Name = "expire_date";
+            this.expire_date.Width = 125;
+            // 
+            // engine_fuel_consumption
+            // 
+            this.engine_fuel_consumption.DataPropertyName = "engine_fuel_consumption";
+            this.engine_fuel_consumption.HeaderText = "engine_fuel_consumption";
+            this.engine_fuel_consumption.MinimumWidth = 6;
+            this.engine_fuel_consumption.Name = "engine_fuel_consumption";
+            this.engine_fuel_consumption.Width = 125;
+            // 
             // boatBindingSource1
             // 
             this.boatBindingSource1.DataMember = "Boat";
@@ -205,6 +248,48 @@
             this.dgvFishingInfo.Size = new System.Drawing.Size(448, 310);
             this.dgvFishingInfo.TabIndex = 2;
             this.dgvFishingInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFishingInfo_CellClick);
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "register_id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "register_id";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 125;
+            // 
+            // date_of_fishing_session
+            // 
+            this.date_of_fishing_session.DataPropertyName = "date_of_fishing_session";
+            this.date_of_fishing_session.HeaderText = "date_of_fishing_session";
+            this.date_of_fishing_session.MinimumWidth = 6;
+            this.date_of_fishing_session.Name = "date_of_fishing_session";
+            this.date_of_fishing_session.Width = 125;
+            // 
+            // amount_fished_kg
+            // 
+            this.amount_fished_kg.DataPropertyName = "amount_fished_kg";
+            this.amount_fished_kg.HeaderText = "amount_fished_kg";
+            this.amount_fished_kg.MinimumWidth = 6;
+            this.amount_fished_kg.Name = "amount_fished_kg";
+            this.amount_fished_kg.Width = 125;
+            // 
+            // duration_of_fishing_session_min
+            // 
+            this.duration_of_fishing_session_min.DataPropertyName = "duration_of_fishing_session_min";
+            this.duration_of_fishing_session_min.HeaderText = "duration_of_fishing_session_min";
+            this.duration_of_fishing_session_min.MinimumWidth = 6;
+            this.duration_of_fishing_session_min.Name = "duration_of_fishing_session_min";
+            this.duration_of_fishing_session_min.Width = 125;
             // 
             // fishingSessionBindingSource
             // 
@@ -296,95 +381,22 @@
             this.btnRemoveRegistry.UseVisualStyleBackColor = true;
             this.btnRemoveRegistry.Click += new System.EventHandler(this.btnRemoveRegistry_Click);
             // 
-            // dataGridViewTextBoxColumn7
+            // btnBackToMainView
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "register_id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "register_id";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 125;
-            // 
-            // date_of_fishing_session
-            // 
-            this.date_of_fishing_session.DataPropertyName = "date_of_fishing_session";
-            this.date_of_fishing_session.HeaderText = "date_of_fishing_session";
-            this.date_of_fishing_session.MinimumWidth = 6;
-            this.date_of_fishing_session.Name = "date_of_fishing_session";
-            this.date_of_fishing_session.Width = 125;
-            // 
-            // amount_fished_kg
-            // 
-            this.amount_fished_kg.DataPropertyName = "amount_fished_kg";
-            this.amount_fished_kg.HeaderText = "amount_fished_kg";
-            this.amount_fished_kg.MinimumWidth = 6;
-            this.amount_fished_kg.Name = "amount_fished_kg";
-            this.amount_fished_kg.Width = 125;
-            // 
-            // duration_of_fishing_session_min
-            // 
-            this.duration_of_fishing_session_min.DataPropertyName = "duration_of_fishing_session_min";
-            this.duration_of_fishing_session_min.HeaderText = "duration_of_fishing_session_min";
-            this.duration_of_fishing_session_min.MinimumWidth = 6;
-            this.duration_of_fishing_session_min.Name = "duration_of_fishing_session_min";
-            this.duration_of_fishing_session_min.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "register_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "register_id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn2.HeaderText = "id";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // boat_name
-            // 
-            this.boat_name.DataPropertyName = "boat_name";
-            this.boat_name.HeaderText = "boat_name";
-            this.boat_name.MinimumWidth = 6;
-            this.boat_name.Name = "boat_name";
-            this.boat_name.Width = 125;
-            // 
-            // expire_date
-            // 
-            this.expire_date.DataPropertyName = "expire_date";
-            this.expire_date.HeaderText = "expire_date";
-            this.expire_date.MinimumWidth = 6;
-            this.expire_date.Name = "expire_date";
-            this.expire_date.Width = 125;
-            // 
-            // engine_fuel_consumption
-            // 
-            this.engine_fuel_consumption.DataPropertyName = "engine_fuel_consumption";
-            this.engine_fuel_consumption.HeaderText = "engine_fuel_consumption";
-            this.engine_fuel_consumption.MinimumWidth = 6;
-            this.engine_fuel_consumption.Name = "engine_fuel_consumption";
-            this.engine_fuel_consumption.Width = 125;
+            this.btnBackToMainView.Location = new System.Drawing.Point(12, 8);
+            this.btnBackToMainView.Name = "btnBackToMainView";
+            this.btnBackToMainView.Size = new System.Drawing.Size(31, 23);
+            this.btnBackToMainView.TabIndex = 12;
+            this.btnBackToMainView.Text = "<";
+            this.btnBackToMainView.UseVisualStyleBackColor = true;
+            this.btnBackToMainView.Click += new System.EventHandler(this.btnBackToMainView_Click);
             // 
             // AdminPanelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1436, 638);
+            this.Controls.Add(this.btnBackToMainView);
             this.Controls.Add(this.btnRemoveRegistry);
             this.Controls.Add(this.lblRemoveRegistryInfo);
             this.Controls.Add(this.btnRefresh);
@@ -449,5 +461,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_fishing_session;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount_fished_kg;
         private System.Windows.Forms.DataGridViewTextBoxColumn duration_of_fishing_session_min;
+        private System.Windows.Forms.Button btnBackToMainView;
     }
 }

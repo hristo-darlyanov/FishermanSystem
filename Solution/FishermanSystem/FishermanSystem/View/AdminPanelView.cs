@@ -15,7 +15,9 @@ namespace FishermanSystem.View
     {
         int selectedRegistryId;
         string selectedRegistry;
-        AdminPanelController adminPanelController = new AdminPanelController();
+        UserController userController = new UserController();
+        BoatController boatController = new BoatController();
+        FishingSessionController fishingSessionController = new FishingSessionController();
         DatabaseController databaseController = new DatabaseController();
 
         public AdminPanelView()
@@ -25,9 +27,9 @@ namespace FishermanSystem.View
 
         private void RefreshData()
         {
-            dgvFishingInfo.DataSource = databaseController.ReadAllFishingSessions();
-            dgvUsers.DataSource = databaseController.ReadAllUsers();
-            dgvBoats.DataSource = databaseController.ReadAllBoats();
+            dgvFishingInfo.DataSource = fishingSessionController.ReadAllFishingSessions();
+            dgvUsers.DataSource = userController.ReadAllUsers();
+            dgvBoats.DataSource = boatController.ReadAllBoats();
         }
 
         private void AdminPanelView_Load(object sender, EventArgs e)
@@ -88,21 +90,30 @@ namespace FishermanSystem.View
             {
                 if (selectedRegistry == "user")
                 {
-                    adminPanelController.RemoveUser(selectedRegistryId);   
+                    userController.RemoveUser(selectedRegistryId);   
                 }
                 if (selectedRegistry == "boat")
                 {
-                    adminPanelController.RemoveBoat(selectedRegistryId);
+                    boatController.RemoveBoat(selectedRegistryId);
                 }
                 if (selectedRegistry == "fishingSession")
                 {
-                    adminPanelController.RemoveFishingSession(selectedRegistryId);
+                    fishingSessionController.RemoveFishingSession(selectedRegistryId);
                 }
+                MessageBox.Show("Removed registry from database");
+                RefreshData();
             }
             else
             {
                 MessageBox.Show("Select a registry to remove");
             }
+        }
+
+        private void btnBackToMainView_Click(object sender, EventArgs e)
+        {
+            MainView mainView = new MainView();
+            Hide();
+            mainView.Show();
         }
     }
 }
